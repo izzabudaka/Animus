@@ -12,3 +12,4 @@ Useful links to expand program (Stanford nlp Classifier, Sentiment Analysis):
   1. http://nlp.stanford.edu/software/classifier.shtml
   2. http://www-nlp.stanford.edu/wiki/Software/Classifier
   3. http://www-nlp.stanford.edu/wiki/Software/Classifier/Sentiment
+  4. http://wordnet.princeton.edu
