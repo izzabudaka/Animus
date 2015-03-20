@@ -3,16 +3,17 @@ WORD: Adjectives, Adverbs, and verbs.
 Trainer
   usage: java Trainer modelFile fileToTag
   example: java Trainer ../extra/models/english-bidirectional-distsim.tagger sample-input.txt
-  Takes a file and looping through every sentence. The user chooses the MOOD of the sentence.
+  Takes a file and loops through every sentence in it. The user chooses the MOOD of one sentence at a time.
   For every WORD in the sentence, the values in WordVals are updated depending on the user input.
 
 Tester
   usage: Tester file
   example: java Tester randTest.txt
-  Reads the word bank. For every sentence in the given file, look at every word, if its in wordVals, update MOOD values. 
+  Reads the WordVals. For every sentence in the given file, look at every word, if its in wordVals, update MOOD values. 
   Output the result for every sentence and all the worlds that are recognised.
 
 WordVals
+  Word Bank.
   Contains WORDs and the frequency of occurance for every type of MOOD.
   Some Nouns and other words were added for sake of accuracy, examples:
     1. basilisk
