@@ -76,7 +76,7 @@ public class PercTrainer{
         String sentence = sc.nextLine();
         System.out.println(sentence);
         int label = Integer.parseInt(sc.nextLine());
-        trainingData.put(sentence, label);
+        trainingData.put(sentence.toLowerCase().replace(".","").replace(",","").replace("?","").replace("!","").replace(";","").replace("\"",""), label);
       }
     }
     catch(Exception e){
