@@ -27,6 +27,17 @@ public class PercTester{
     }
     return results;
   }
+  public double testPhrase(String[] phrase, int label) {
+    double[] results = new double[labelsNo];
+    for(int i = 0; i < phrase.length; i++)
+      if(wordVector.containsKey(phrase[i].toLowerCase()))
+        wordVector.put(phrase[i], wordVector.get(phrase[i].toLowerCase())+1);
+    for(int i = 0; i < labelsNo; i++){
+      double dotProduct = dotProduct(wordVector, weightsMatrix, i);
+      results[i] = sigmoid(dotProduct);
+    }
+    return results[label];
+  }
   public double sigmoid(double dotProduct){
     return 1.0/(1+Math.pow(Math.E,-1.0*dotProduct));
   }
