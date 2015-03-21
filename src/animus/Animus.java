@@ -1,6 +1,7 @@
 package animus;
 
 import animus.StreamServer;
+import animus.SpeechRecognizer;
 
 public class Animus
 {
@@ -19,6 +20,8 @@ public class Animus
 
   public void run() {
     _streamServer.run();
+    //SpeechRecognizer r = new SpeechRecognizer();
+    //r.recognizeFromFile("asdf.wav");
   }
 
   public static void main(String[] args) {

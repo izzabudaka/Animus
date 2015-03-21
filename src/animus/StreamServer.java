@@ -4,9 +4,12 @@ import java.net.*;
 import java.io.*;
 import javax.sound.sampled.*;
 
+import animus.SpeechRecognizer;
+
 public class StreamServer
 {
   private ServerSocket serverSocket;
+  private SpeechRecognizer r;
 
   private Socket acceptConnection() {
     Socket socket = null;
@@ -24,6 +27,8 @@ public class StreamServer
     InputStream inputStream = null;
     int bufferSize = 0;
 
+    r = new SpeechRecognizer();
+
     try {
       inputStream = socket.getInputStream();
 
@@ -34,7 +39,12 @@ public class StreamServer
       System.out.println(e);
     }
 
-    AudioFormat format = new AudioFormat(8000, 16, 1, true, true);
+    int rate = 8000;
+    int depth = 16;
+    int channels = 1;
+    boolean signed = false;
+    boolean bigend = false;
+    AudioFormat format = new AudioFormat(rate, depth, channels, signed, bigend);
 
     byte[] buffer = new byte[bufferSize];
     try{
@@ -47,10 +57,15 @@ public class StreamServer
         //
         
         InputStream bufferedIn = new BufferedInputStream(inputStream);
-        //AudioInputStream ais = AudioSystem.getAudioInputStream(bufferedIn);
-        AudioInputStream ais = new AudioInputStream(bufferedIn, format, 100000);
+        AudioInputStream ais = new AudioInputStream(bufferedIn, format, 200000);
+        //System.out.println("IS it blocking ??");
+
 
         AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("asdf.wav"));
+
+        //r.recognize(bufferedIn);
+        r.recognizeFromFile("asdf.wav");
+
       //}
     //StringBuilder out = new StringBuilder();
     //try(Reader input = new InputStreamReader(inputStream, "UTF-8")) {
@@ -65,13 +80,7 @@ public class StreamServer
     //    out.append(buffer, 0, size);
     //    System.out.println(out);
     //  }
-    } catch (UnsupportedEncodingException e) {
-      System.out.println("unsupported encoding " + e);
-    //} catch (UnsupportedAudioFileException e) {
-    //  System.out.println("unsupported audio " + e);
-    //} catch (LineUnavailableException e) {
-    //  System.err.println("line err " + e);
-    } catch (IOException e) {
+    } catch (Exception e) {
       System.out.println("io exc " + e);
     }
   }
@@ -81,6 +90,7 @@ public class StreamServer
 		super();
 
     ServerSocket serverSocket = null;
+    r = new SpeechRecognizer();
 	}
 
   public void run() {
