@@ -6,12 +6,6 @@ import javax.sound.sampled.*;
 
 public class StreamServer
 {
-  public static void main(String[] args) {
-    StreamServer s = new StreamServer();
-
-    s.run();
-  } 
-
   private ServerSocket serverSocket;
 
   private Socket acceptConnection() {
@@ -33,24 +27,31 @@ public class StreamServer
     try {
       inputStream = socket.getInputStream();
 
-      bufferSize = socket.getReceiveBufferSize();
-      System.out.println("buff size: " + bufferSize);
+      //bufferSize = socket.getReceiveBufferSize();
+      //System.out.println("buff size: " + bufferSize);
 
     } catch (IOException e) {
       System.out.println(e);
     }
 
+    AudioFormat format = new AudioFormat(8000, 16, 1, true, true);
+
     byte[] buffer = new byte[bufferSize];
     try{
-      while(inputStream != null) {
-        int size = inputStream.read(buffer, 0, buffer.length);
-        if(size < 0) break;
+      //while(inputStream != null) {
+        //int size = inputStream.read(buffer, 0, buffer.length);
+        //if(size < 0) break;
 
+        //System.out.println("received: " + size);
         //we have buffer now?
+        //
         
-        //InputStream bufferedIn = new BufferedInputStream(inputStream);
+        InputStream bufferedIn = new BufferedInputStream(inputStream);
         //AudioInputStream ais = AudioSystem.getAudioInputStream(bufferedIn);
-      }
+        AudioInputStream ais = new AudioInputStream(bufferedIn, format, 100000);
+
+        AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("asdf.wav"));
+      //}
     //StringBuilder out = new StringBuilder();
     //try(Reader input = new InputStreamReader(inputStream, "UTF-8")) {
     //  System.out.println("Listening..");
@@ -65,11 +66,13 @@ public class StreamServer
     //    System.out.println(out);
     //  }
     } catch (UnsupportedEncodingException e) {
-      System.out.println(e);
+      System.out.println("unsupported encoding " + e);
     //} catch (UnsupportedAudioFileException e) {
-    //  System.out.println(e);
+    //  System.out.println("unsupported audio " + e);
+    //} catch (LineUnavailableException e) {
+    //  System.err.println("line err " + e);
     } catch (IOException e) {
-      System.out.println(e);
+      System.out.println("io exc " + e);
     }
   }
 

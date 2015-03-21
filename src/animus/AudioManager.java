@@ -1,22 +1,15 @@
-package model.com.goat.animus;
+package animus;
 
-
-/**
- * <!-- begin-user-doc -->
- * <!--  end-user-doc  -->
- * @generated
- */
+import javax.sound.sampled.*;
+import javax.sound.sampled.AudioFormat.*;
 
 public class AudioManager
 {
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!--  end-user-doc  -->
-	 * @generated
-	 */
+
 	public AudioManager(){
 		super();
 	}
+
 
 }
 
