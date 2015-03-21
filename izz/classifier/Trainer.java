@@ -11,9 +11,6 @@ import java.util.*;
 import java.io.PrintWriter;
 
 class Trainer {
-
-  private Trainer() {}
-
   public static void main(String[] args) throws Exception {
     String paragraph = "";
     List<List<HasWord>> sentences;
@@ -96,7 +93,7 @@ class Trainer {
       }
     }
     System.out.println(wantedWords);
-    writeFile(wantedWords, "WordVals.txt");
+    writeFile(wantedWords, "Sentences.txt");
     System.out.println("New Progress: " + nprogress);
   }
   private static Map<String, List<Integer>> readFile(Map<String, List<Integer>> map, String filename){
