@@ -1,0 +1,14 @@
+<component name="libraryTable">
+  <library name="neuroph-2.9">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/neuroph-imgrec-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/neuroph-samples-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/neuroph-adapters-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/neuroph-contrib-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/neuroph-ocr-2.9.jar!/" />
+      <root url="jar://$PROJECT_DIR$/neuroph-core-2.9.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
