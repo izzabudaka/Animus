@@ -5,12 +5,8 @@ import java.io.FileReader;
 import java.util.*;
 
 class Tester{
-  public static void main(String[] args){
-    if(args.length != 1){
-      System.out.println("Tester file");
-      return;
-    }
-    Map<String, List<Integer>> trainingD = new HashMap();
+  Map<String, List<Integer>> trainingD;
+  public Tester() {
     trainingD = readFile(trainingD, "WordVals.txt");
     trainingD.remove("be");
     trainingD.remove("back");
@@ -20,6 +16,14 @@ class Tester{
     trainingD.remove("then");
     trainingD.remove("up");
     trainingD.remove("like");
+  }
+
+  public static void main(String[] args){
+    if(args.length != 1){
+      System.out.println("Tester file");
+      return;
+    }
+    Map<String, List<Integer>> trainingD = new HashMap();
     List<List<HasWord>> sentences;
     try{
       sentences = MaxentTagger.tokenizeText(new BufferedReader(new FileReader(args[0])));
