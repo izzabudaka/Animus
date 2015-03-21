@@ -12,35 +12,52 @@ public class PercTrainer{
     tester = new PercTester();
 
     trainingData = new HashMap(1009);
-    predictedResults = new HashMap(1009);
     trainingData = readSentences("Sentences.txt");
   }
   public void modifyWeights(){
-    Map
     double prevCost = 0.0;
     double currentCost = 0.0;
     for(int i = 0; i < labelNo; i++){
-      Map<String, Double> predictedResults;
+      Map<String, Double> predictedResults = new HashMap(1009);
       for(Map.Entry<String, Integer> entry : trainingData.entrySet()){
         String[] phrase = entry.getKey().split(" ");
         predictedResults.put(entry.getKey(), tester.testPhrase(phrase,i));
       }
       while(Math.abs(prevCost - (currentCost=costFunction(predictedResults))) > maxCostDiff){
         prevCost = currentCost;
-        for(Map.Entry<String, Integer> entry : tester.weightsMatrix.entrySet()){
-          tester.weightsMatrix.put(entry.getKey(), tester.weightsMatrix.get(entry.getKey()).set(i, tester.weightsMatrix.get(entry.getKey()).get(i) -));
+        for(Map.Entry<String, Integer> entry : trainingData.entrySet()){
+          Map<String, Integer> wordVector = getWordVector(entry.getKey());
+          String[] phrases = entry.getKey().split(" ");
+          double predictedVal = tester.testPhrase(phrases, i);
+          double realVal;
+          if(entry.getValue() == i)
+            realVal = 1;
+          else
+            realVal = 0;
+          for(String phrase : phrases){
+            if(tester.wordVector.containsKey(phrase)){
+              double sum = 0.0;
+              for(int sentence=0; sentence < trainingData.size(); sentence++)
+                sum += predictedVal -realVal * wordVector.get(phrase);
+              double nWeight = tester.weightsMatrix.get(phrase).get(i) - learningRate/trainingData.size() * sum;
+              List<Double> wordWeights = tester.weightsMatrix.get(phrase);
+              wordWeights.set(i, nWeight);
+              tester.weightsMatrix.put(phrase, wordWeights);
+            }
+          }
         }
       }
     }
   }
-  public double updateWeight(double weight,Map<String, Double> results){
-    double sum = 0.0;
-    for(Map.Entry<String, Integer> entry : trainingData.entrySet()){
-      String[] phrase = entry.getKey().split(" ");
-      for(int i = 0; i < phrase.length; i++)
-        sum += (results.get(entry.getKey()) - entry.getValue()) * tester.wordVector.get(entry.getKey());
-    }
-    return weight - learningRate/trainingData.size() * 
+  public Map<String, Integer> getWordVector(String phrase){
+    String[] phrases = phrase.split(" ");
+    Map<String, Integer> wordVector = new HashMap(1009);
+    for(Map.Entry<String, Integer> entry : tester.wordVector.entrySet())
+      wordVector.put(entry.getKey(), 0);
+    for(String part : phrases)
+      if(tester.wordVector.containsKey(part))
+        wordVector.put(part, wordVector.get(part)+1);
+    return wordVector;
   }
   public double costFunction(Map<String, Double> results) {
     double cost = -1.0/trainingData.size();
