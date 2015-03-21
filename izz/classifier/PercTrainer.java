@@ -35,6 +35,7 @@ public class PercTrainer{
           else
             realVal = 0;
           for(String phrase : phrases){
+            phrase = phrase.toLowerCase();
             if(tester.wordVector.containsKey(phrase)){
               double sum = 0.0;
               for(int sentence=0; sentence < trainingData.size(); sentence++)
@@ -54,9 +55,11 @@ public class PercTrainer{
     Map<String, Integer> wordVector = new HashMap(1009);
     for(Map.Entry<String, Integer> entry : tester.wordVector.entrySet())
       wordVector.put(entry.getKey(), 0);
-    for(String part : phrases)
+    for(String part : phrases){
+      part = part.toLowerCase();
       if(tester.wordVector.containsKey(part))
         wordVector.put(part, wordVector.get(part)+1);
+    }
     return wordVector;
   }
   public double costFunction(Map<String, Double> results) {
