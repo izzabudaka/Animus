@@ -44,7 +44,9 @@ public class DataSet {
     }
 
     private void addToSet(String word) {
-        wordSet.put(word,nextIndex++);
+        if(!wordSet.containsKey(word)) {
+            wordSet.put(word,nextIndex++);
+        }
     }
 
     private void loadDataSet() 
@@ -62,6 +64,9 @@ public class DataSet {
 
             addToSet(line);
         }
+
+        featuresNumber    = wordSet.size();
+
     }
 
     public int[][] getExamples() {
@@ -92,14 +97,10 @@ public class DataSet {
     private void loadExamples()
         throws FileNotFoundException
      {
-
-        // examplesNumber    = 620;
-
-        examplesNumber    = 129;
-        featuresNumber    = 638 + 1;
+        examplesNumber    = 130;
 
         defaultLabels = new int[examplesNumber];
-        examples      = new int[examplesNumber][featuresNumber];
+        examples      = new int[examplesNumber][featuresNumber+2];
 
         int labelIndex = featuresNumber - 1;
 
@@ -108,26 +109,33 @@ public class DataSet {
         int exampleIndex = 1;
 
         instances = new ArrayList<Instance>();
-        int[] array = new int[featuresNumber];
 
-        instances.add(new Instance(0,array));
+        // Dummy entry
+        int[] array = new int[featuresNumber];
+        instances.add(new Instance(0, array));
+        
         // 1
         while(scanner.hasNextLine()) {
         
+            System.out.println("KURWA");
             String wordLine = scanner.nextLine();
 
             // Extract Valuable Words
             String[] words = wordLine.split(" ");
+            System.out.println(wordSet.size());
 
             for(String word:words) {
                 try{
                     int featureIndex = wordSet.get(word);
+                    System.out.println(exampleIndex + ":" + featureIndex);
                     examples[exampleIndex][featureIndex]++;
                 } catch(NullPointerException e) {
+                    System.out.println("Exp");                    
                     System.out.println("Word:" + word + " doesn't exist");
                 } 
             }
 
+            System.out.println("LKurwaabel:");
             int label = Integer.parseInt(scanner.nextLine());
 
             // Set the labels
