@@ -14,6 +14,7 @@ public class ClassifierWrapper{
   public void sendValues(){
     System.out.println("CALLING CLASSIFIER");
     double[] res = classifier.classify(buffer);
+    buffer = new String[buffer.length];
     _callback.tick(res);
   }
 }

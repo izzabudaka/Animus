@@ -9,7 +9,7 @@ import animus.SpeechRecognizer;
 public class StreamServer
 {
   private ServerSocket serverSocket;
-  private SpeechRecognizer r;
+  private SpeechProcessor r;
 
   private Socket acceptConnection() {
     Socket socket = null;
@@ -63,7 +63,7 @@ public class StreamServer
   }
 
   //---------------------------------------------------------------------------
-	public StreamServer(SpeechRecognizer rec){
+	public StreamServer(SpeechProcessor rec){
 		super();
     r = rec;
     ServerSocket serverSocket = null;

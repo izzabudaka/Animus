@@ -11,7 +11,7 @@ public class Animus
   StreamServer _streamServer;
   AudioManager _audioManager;
   MagicClassifier _magicClassifier;
-  SpeechRecognizer _speechRecognizer;
+  SpeechProcessor _speechRecognizer;
   ClassifierWrapper _wrapper;
   Determiner _determiner;
 
@@ -32,13 +32,13 @@ public class Animus
 
     double[] newVals = _determiner.computeNewRatios(res);
     for(int i=0; i<newVals.length; i++) {
-      System.out.print(newVals[i]);
+      System.out.print(newVals[i] + " ");
     }
     System.out.println("\n");
 
     double[] gains = _determiner.deriveAudioGainValues(0.5);
     for(int i=0; i<gains.length; i++) {
-      System.out.print(gains[i]);
+      System.out.print(gains[i] + " ");
     }
     System.out.println("\n");
   }
@@ -53,7 +53,8 @@ public class Animus
     _audioManager = new AudioManager(filenames);
     int bufferSize = 5;
     _wrapper = new ClassifierWrapper(bufferSize, _magicClassifier, this);
-    _speechRecognizer = new SpeechRecognizer(_wrapper);
+    //_speechRecognizer = new SpeechRecognizer(_wrapper);
+    _speechRecognizer = new MockSpeechProcessor(_wrapper);
     //_speechRecognizer.init();
     _streamServer = new StreamServer(_speechRecognizer);
     _determiner = new Determiner(3);
@@ -79,9 +80,9 @@ public class Animus
     Animus a = new Animus();
 
     a.init();
-    //a.run();
+    a.run();
     //a.testAudio();
-    a.testDet();
+    //a.testDet();
   }
 
 }

@@ -23,7 +23,6 @@ public class Determiner {
   }
 
   public double[] deriveAudioGainValues(double threshold, double[] ratios) {
-    System.out.println(ratios);
     double[] gains = new double[ratios.length];
     for(int i=0; i<gains.length; i++) {
       if(ratios[i] < threshold) gains[i] = 0;
