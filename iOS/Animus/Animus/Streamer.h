@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
-@interface Streamer : NSObject
+@interface Streamer : NSObject <NSStreamDelegate>
+
+-(void)testStreamWithMessage:(NSString *)message;
+-(void)send:(NSData *)message;
 
 @end
