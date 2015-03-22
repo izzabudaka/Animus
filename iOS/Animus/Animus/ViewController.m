@@ -25,7 +25,6 @@
     [super viewDidLoad];
     
     self.isRecordng = NO;
-    self.streamer = [[Streamer alloc] init];
     
     self.view.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"bg-idle"]];
     
@@ -99,19 +98,44 @@
 }
 
 -(void)animateIn {
-    
-}
-
--(void)animateOut {
     [UIView animateWithDuration:0.5
-                          delay:1.0
+                          delay:0.2
                         options: UIViewAnimationCurveEaseOut
                      animations: ^{
-                         CGFloat x = self.hornyBus.frame.origin.x - 20;
+                         CGFloat x = self.hornyBus.frame.origin.x - 30;
                          CGFloat y = self.hornyBus.frame.origin.y;
                          CGRect frame = self.hornyBus.frame;
                          
                          [self.hornyBus setFrame:(CGRectMake(x, y, frame.size.width, frame.size.height ))];
+                         
+                         CGFloat x2 = self.moreHornyDwarfs.frame.origin.x + 30;
+                         CGFloat y2 = self.moreHornyDwarfs.frame.origin.y;
+                         CGRect frame2 = self.moreHornyDwarfs.frame;
+                         
+                         [self.moreHornyDwarfs setFrame:(CGRectMake(x2, y2, frame2.size.width, frame2.size.height ))];
+                         
+                     }
+                     completion:^(BOOL finished){
+                         NSLog(@"Done!");
+                     }];
+}
+
+-(void)animateOut {
+    [UIView animateWithDuration:0.5
+                          delay:0.2
+                        options: UIViewAnimationCurveEaseOut
+                     animations: ^{
+                         CGFloat x = self.hornyBus.frame.origin.x + 30;
+                         CGFloat y = self.hornyBus.frame.origin.y;
+                         CGRect frame = self.hornyBus.frame;
+                         
+                         [self.hornyBus setFrame:(CGRectMake(x, y, frame.size.width, frame.size.height ))];
+                         
+                         CGFloat x2 = self.moreHornyDwarfs.frame.origin.x - 30;
+                         CGFloat y2 = self.moreHornyDwarfs.frame.origin.y;
+                         CGRect frame2 = self.moreHornyDwarfs.frame;
+                         
+                         [self.moreHornyDwarfs setFrame:(CGRectMake(x2, y2, frame2.size.width, frame2.size.height ))];
                          
                      }
                      completion:^(BOOL finished){
@@ -121,12 +145,17 @@
 
 -(void)handleTap:(UITapGestureRecognizer *)tapRecognizer {
     if(self.isRecordng) {
+        
+        self.streamer   = [[Streamer alloc] init];
         [self.hornyButton setImage:[UIImage imageNamed:@"play-idle"]];
-        [self.streamer testStreamWithMessage:@"stop"];
+        [self animateIn];
+//        [self.streamer testStreamWithMessage:@"stop"];
 
     } else {
         [self.hornyButton setImage:[UIImage imageNamed:@"play-record"]];
-        [self.streamer testStreamWithMessage:@"start"];
+        [self animateOut];
+        [self.streamer close];
+//        [self.streamer testStreamWithMessage:@"start"];
     }
     
     self.isRecordng = !self.isRecordng;

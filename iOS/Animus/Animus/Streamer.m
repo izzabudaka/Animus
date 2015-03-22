@@ -55,6 +55,18 @@
     
 }
 
+-(void)close {
+    [self.inputStream close];
+    [self.inputStream removeFromRunLoop:[NSRunLoop currentRunLoop]
+                          forMode:NSDefaultRunLoopMode];
+    self.inputStream = nil;
+
+    [self.outputStream close];
+    [self.outputStream removeFromRunLoop:[NSRunLoop currentRunLoop]
+                                forMode:NSDefaultRunLoopMode];
+    self.outputStream = nil;
+}
+
 -(void)testStreamWithMessage:(NSString *)message {
     NSData *data = [[NSData alloc]
                     initWithData:[message dataUsingEncoding:NSASCIIStringEncoding]];

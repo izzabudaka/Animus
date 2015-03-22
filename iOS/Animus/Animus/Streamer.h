@@ -12,5 +12,6 @@
 
 -(void)testStreamWithMessage:(NSString *)message;
 -(void)send:(NSData *)message;
+-(void)close;
 
 @end
