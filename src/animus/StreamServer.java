@@ -42,7 +42,7 @@ public class StreamServer
     int rate = 8000;
     int depth = 16;
     int channels = 1;
-    boolean signed = false;
+    boolean signed = true;
     boolean bigend = false;
     AudioFormat format = new AudioFormat(rate, depth, channels, signed, bigend);
 
