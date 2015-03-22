@@ -9,8 +9,13 @@ public class SpeechRecognizer
 
   private Configuration config;
   private StreamSpeechRecognizer recognizer;
+  private ClassifierWrapper wrapper;
+
 	public SpeechRecognizer(ClassifierWrapper wrapper){
 		super();
+
+    this.wrapper = wrapper;
+
     config = new Configuration();
     config.setAcousticModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us");
     config.setDictionaryPath("resource:/edu/cmu/sphinx/models/en-us/cmudict-en-us.dict");
@@ -60,11 +65,11 @@ public class SpeechRecognizer
           String aword =r.toString();
           String[] words = aword.replace("{","").replace("}","").split(",");
           if(!words[0].equals("<sil>") && !words[0].equals("</s>")){
-            buffer[i] = words[0].replace("[","").replace("]","");
+            wrapper.buffer[i] = words[0].replace("[","").replace("]","");
             i++;
           }
-          if(i >= bufferSize){
-            wrapper.sendValues(buffer);
+          if(i >= wrapper.buffer.length){
+            wrapper.sendValues();
             i = 0;
           }
       }

@@ -27,7 +27,7 @@ public class StreamServer
     InputStream inputStream = null;
     int bufferSize = 0;
 
-    r = new SpeechRecognizer();
+    //r = new SpeechRecognizer();
 
     try {
       inputStream = socket.getInputStream();
@@ -48,49 +48,24 @@ public class StreamServer
 
     byte[] buffer = new byte[bufferSize];
     try{
-      //while(inputStream != null) {
-        //int size = inputStream.read(buffer, 0, buffer.length);
-        //if(size < 0) break;
-
-        //System.out.println("received: " + size);
-        //we have buffer now?
-        //
         
-        InputStream bufferedIn = new BufferedInputStream(inputStream);
-        AudioInputStream ais = new AudioInputStream(bufferedIn, format, 200000);
-        //System.out.println("IS it blocking ??");
+      InputStream bufferedIn = new BufferedInputStream(inputStream);
+      AudioInputStream ais = new AudioInputStream(bufferedIn, format, 200000);
 
 
-        AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("asdf.wav"));
+      AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("asdf.wav"));
 
-        //r.recognize(bufferedIn);
-        r.recognizeFromFile("asdf.wav");
-
-      //}
-    //StringBuilder out = new StringBuilder();
-    //try(Reader input = new InputStreamReader(inputStream, "UTF-8")) {
-    //  System.out.println("Listening..");
-    //  for(;;) {
-    //    int size = input.read(buffer, 0, buffer.length);
-    //    if(size < 0) break;
-
-    //    InputStream bufferedIn = new BufferedInputStream(inputStream);
-    //    AudioInputStream ais = AudioSystem.getAudioInputStream(bufferedIn);
-
-    //    out.append(buffer, 0, size);
-    //    System.out.println(out);
-    //  }
+      r.recognizeFromFile("asdf.wav");
     } catch (Exception e) {
       System.out.println("io exc " + e);
     }
   }
 
   //---------------------------------------------------------------------------
-	public StreamServer(){
+	public StreamServer(SpeechRecognizer rec){
 		super();
-
+    r = rec;
     ServerSocket serverSocket = null;
-    r = new SpeechRecognizer();
 	}
 
   public void run() {

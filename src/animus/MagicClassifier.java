@@ -1,4 +1,4 @@
-package model.com.goat.animus;
+package animus;
 
 
 /**
@@ -17,6 +17,8 @@ public class MagicClassifier
 	public MagicClassifier(){
 		super();
 	}
+
+  public void classify(String[] w) {}
 
 }
 
