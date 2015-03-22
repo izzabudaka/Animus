@@ -13,7 +13,7 @@ public class ClassifierWrapper{
   }
   public void sendValues(){
     System.out.println("CALLING CLASSIFIER");
-    classifier.classify(buffer);
-    _callback.tick();
+    double[] res = classifier.classify(buffer);
+    _callback.tick(res);
   }
 }

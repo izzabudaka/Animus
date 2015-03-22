@@ -22,11 +22,6 @@ public class SpeechRecognizer
     config.setLanguageModelPath("resource:/edu/cmu/sphinx/models/en-us/en-us.lm.dmp");
 
 
-    try {
-      recognizer = new StreamSpeechRecognizer(config);
-    } catch (Exception e) {
-      System.out.println(e);
-    }
 
     //try {
     //  LiveSpeechRecognizer recognizer = new LiveSpeechRecognizer(config);
@@ -37,6 +32,14 @@ public class SpeechRecognizer
     //  System.err.println(e);
     //}
 	}
+
+  public void init() {
+    try {
+      recognizer = new StreamSpeechRecognizer(config);
+    } catch (Exception e) {
+      System.out.println(e);
+    }
+  }
 
   public void recognize(InputStream stream) {
     recognizer.startRecognition(stream);
