@@ -25,7 +25,7 @@ public class Determiner {
   public double[] deriveAudioGainValues(double threshold, double[] ratios) {
     double[] gains = new double[ratios.length];
     for(int i=0; i<gains.length; i++) {
-      if(ratios[i] < threshold) gains[i] = 0;
+      if(ratios[i] < threshold) gains[i] = -30;
       else {
         gains[i] = -(1-ratios[i]);
       }

@@ -33,33 +33,33 @@ public class StreamServer
       inputStream = socket.getInputStream();
     //a = new SpeechRecognizer();
 
-      //bufferSize = socket.getReceiveBufferSize();
+      bufferSize = socket.getReceiveBufferSize();
       //System.out.println("buff size: " + bufferSize);
 
     } catch (IOException e) {
       System.out.println(e);
     }
 
-    int rate = 8000;
-    int depth = 16;
-    int channels = 1;
-    boolean signed = true;
-    boolean bigend = false;
-    AudioFormat format = new AudioFormat(rate, depth, channels, signed, bigend);
+    //int rate = 8000;
+    //int depth = 16;
+    //int channels = 1;
+    //boolean signed = true;
+    //boolean bigend = false;
+    //AudioFormat format = new AudioFormat(rate, depth, channels, signed, bigend);
 
-    byte[] buffer = new byte[bufferSize];
-    try{
-        
-      InputStream bufferedIn = new BufferedInputStream(inputStream);
-      AudioInputStream ais = new AudioInputStream(bufferedIn, format, 200000);
+    //byte[] buffer = new byte[bufferSize];
+    //try{
+    //    
+    //  InputStream bufferedIn = new BufferedInputStream(inputStream);
+    //  AudioInputStream ais = new AudioInputStream(bufferedIn, format, 200000);
 
 
-      AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("asdf.wav"));
+    //  AudioSystem.write(ais, AudioFileFormat.Type.WAVE, new File("asdf.wav"));
 
-      r.recognizeFromFile("asdf.wav");
-    } catch (Exception e) {
-      System.out.println("io exc " + e);
-    }
+    //  r.recognizeFromFile("asdf.wav");
+    //} catch (Exception e) {
+    //  System.out.println("io exc " + e);
+    //}
   }
 
   //---------------------------------------------------------------------------
@@ -77,8 +77,9 @@ public class StreamServer
       System.out.println("Can't setup serv on 666 " + e); 
     }
 
+    System.out.println("Waiting for connection");
     Socket socket = acceptConnection();
-    acceptData(socket);
+    //acceptData(socket);
   }
 
 

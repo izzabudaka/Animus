@@ -88,7 +88,7 @@ public class DataSet {
                 int featureIndex = wordSet.get(word);
                 vector[featureIndex]++;
             } catch(NullPointerException e) {
-                System.out.println("Word:" + word + " doesn't exist");
+                //System.out.println("Word:" + word + " doesn't exist");
             } 
         }
 
@@ -132,7 +132,7 @@ public class DataSet {
                     examples[exampleIndex][featureIndex]++;
                 } catch(NullPointerException e) {
                     System.out.println("Exp");                    
-                    System.out.println("Word:" + word + " doesn't exist");
+                    //System.out.println("Word:" + word + " doesn't exist");
                 } 
             }
 

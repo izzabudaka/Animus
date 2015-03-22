@@ -13,10 +13,10 @@ public class ClassifierWrapper{
     String str = "";
     for(int i=0; i<buffer.length; i++) str += buffer[i] + " ";
     double[] res = Logistic.classify(str);
-    System.out.print("asdf: ");
-    for(int i=0; i<res.length; i++) {
-      System.out.print(res[i] + " ");
-    }
+    //System.out.print("asdf: ");
+    //for(int i=0; i<res.length; i++) {
+    //  System.out.print(res[i] + " ");
+    //}
     System.out.print("\n");
     _callback.tick(res);
   }
