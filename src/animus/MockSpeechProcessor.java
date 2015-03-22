@@ -32,7 +32,9 @@ public class MockSpeechProcessor implements SpeechProcessor{
   }
 
   public void recognizeFromFile(String filename) {
-    process("All the words are mocked".split(" "));
-    process("There are even more mocked inputs in fact this was not processed by speech".split(" "));
+    process("Fawkes dived His long golden beak sank out of the sight and a sudden shower of dark blood spattered the floor".split(" "));
+    process("Help me help me Harry muttered wildly someone anyone".split(" "));
+    //process("All the words are mocked".split(" "));
+    //process("There are even more mocked inputs in fact this was not processed by speech".split(" "));
   }
 }

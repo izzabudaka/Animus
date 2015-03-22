@@ -10,7 +10,6 @@ public class Animus
 {
   StreamServer _streamServer;
   AudioManager _audioManager;
-  MagicClassifier _magicClassifier;
   SpeechProcessor _speechRecognizer;
   ClassifierWrapper _wrapper;
   Determiner _determiner;
@@ -21,7 +20,6 @@ public class Animus
 
     _streamServer = null;
     _audioManager = null;
-    _magicClassifier = null;
     _speechRecognizer = null;
     _wrapper = null;
     _determiner = null;
@@ -45,19 +43,21 @@ public class Animus
 
   public void init() {
   
-    _magicClassifier = new MagicClassifier();
     String[] filenames = {
       "s1.wav",
       "s2.wav"
     };
+
+    Logistic.train1();
+
     _audioManager = new AudioManager(filenames);
     int bufferSize = 5;
-    _wrapper = new ClassifierWrapper(bufferSize, _magicClassifier, this);
+    _wrapper = new ClassifierWrapper(bufferSize, this);
     //_speechRecognizer = new SpeechRecognizer(_wrapper);
     _speechRecognizer = new MockSpeechProcessor(_wrapper);
     //_speechRecognizer.init();
     _streamServer = new StreamServer(_speechRecognizer);
-    _determiner = new Determiner(3);
+    _determiner = new Determiner(6);
   }
 
   public void testAudio() {

@@ -4,17 +4,20 @@ import animus.MagicClassifier;
 
 public class ClassifierWrapper{
   public String[] buffer;
-  MagicClassifier classifier;
   Animus _callback;
-  public ClassifierWrapper(int bufferSize, MagicClassifier classifier, Animus callback){
+  public ClassifierWrapper(int bufferSize, Animus callback){
     buffer = new String[bufferSize];
-    this.classifier = classifier;
     _callback = callback;
   }
   public void sendValues(){
-    System.out.println("CALLING CLASSIFIER");
-    double[] res = classifier.classify(buffer);
-    buffer = new String[buffer.length];
+    String str = "";
+    for(int i=0; i<buffer.length; i++) str += buffer[i] + " ";
+    double[] res = Logistic.classify(str);
+    System.out.print("asdf: ");
+    for(int i=0; i<res.length; i++) {
+      System.out.print(res[i] + " ");
+    }
+    System.out.print("\n");
     _callback.tick(res);
   }
 }

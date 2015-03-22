@@ -1,7 +1,7 @@
 JAVAC=javac
 JVFLAGS = -Xlint:unchecked -Xlint:deprecation
 
-JPATHS=-cp :./src/:./build/:./bin/sphinx4-core-1.0-SNAPSHOT.jar:./bin/sphinx4-data-1.0-SNAPSHOT.jar
+JPATHS=-cp :./src/:./build/:./bin/sphinx4-core-1.0-SNAPSHOT.jar:./bin/sphinx4-data-1.0-SNAPSHOT.jar:./izz/stanford-nlp/stanford-postagger-3.5.1.jar
 JUNITPATHS=-cp :./src/:./build/
 
 src_dir = src
