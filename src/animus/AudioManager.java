@@ -41,8 +41,13 @@ public class AudioManager
     return c;
   }
 
+  public void setGain(int index, float gain) {
+    Clip c = clips[index];
+    FloatControl gainCtrl = (FloatControl)c.getControl(FloatControl.Type.MASTER_GAIN);
+    gainCtrl.setValue(gain);
+  }
+
   public Clip playSound(int index, float gain) {
-    System.out.println(index + " " + clips.length);
     Clip c = clips[index];
 
     FloatControl gainCtrl = (FloatControl)c.getControl(FloatControl.Type.MASTER_GAIN);

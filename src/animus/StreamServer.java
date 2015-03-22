@@ -31,6 +31,7 @@ public class StreamServer
 
     try {
       inputStream = socket.getInputStream();
+    //a = new SpeechRecognizer();
 
       //bufferSize = socket.getReceiveBufferSize();
       //System.out.println("buff size: " + bufferSize);
