@@ -1,0 +1,444 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		C5D04F471ABDDE3D008B73BC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D04F461ABDDE3D008B73BC /* main.m */; };
+		C5D04F4A1ABDDE3D008B73BC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D04F491ABDDE3D008B73BC /* AppDelegate.m */; };
+		C5D04F4D1ABDDE3D008B73BC /* Animus.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C5D04F4B1ABDDE3D008B73BC /* Animus.xcdatamodeld */; };
+		C5D04F501ABDDE3D008B73BC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D04F4F1ABDDE3D008B73BC /* ViewController.m */; };
+		C5D04F531ABDDE3D008B73BC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C5D04F511ABDDE3D008B73BC /* Main.storyboard */; };
+		C5D04F551ABDDE3D008B73BC /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C5D04F541ABDDE3D008B73BC /* Images.xcassets */; };
+		C5D04F581ABDDE3D008B73BC /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C5D04F561ABDDE3D008B73BC /* LaunchScreen.xib */; };
+		C5D04F641ABDDE3D008B73BC /* AnimusTests.m in Sources */ = {isa = PBXBuildFile; fileRef = C5D04F631ABDDE3D008B73BC /* AnimusTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		C5D04F5E1ABDDE3D008B73BC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C5D04F391ABDDE3D008B73BC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C5D04F401ABDDE3D008B73BC;
+			remoteInfo = Animus;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		C5D04F411ABDDE3D008B73BC /* Animus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animus.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D04F451ABDDE3D008B73BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5D04F461ABDDE3D008B73BC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		C5D04F481ABDDE3D008B73BC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		C5D04F491ABDDE3D008B73BC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		C5D04F4C1ABDDE3D008B73BC /* Animus.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Animus.xcdatamodel; sourceTree = "<group>"; };
+		C5D04F4E1ABDDE3D008B73BC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		C5D04F4F1ABDDE3D008B73BC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		C5D04F521ABDDE3D008B73BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		C5D04F541ABDDE3D008B73BC /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		C5D04F571ABDDE3D008B73BC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
+		C5D04F5D1ABDDE3D008B73BC /* AnimusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		C5D04F621ABDDE3D008B73BC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C5D04F631ABDDE3D008B73BC /* AnimusTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnimusTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		C5D04F3E1ABDDE3D008B73BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D04F5A1ABDDE3D008B73BC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		C5D04F381ABDDE3D008B73BC = {
+			isa = PBXGroup;
+			children = (
+				C5D04F431ABDDE3D008B73BC /* Animus */,
+				C5D04F601ABDDE3D008B73BC /* AnimusTests */,
+				C5D04F421ABDDE3D008B73BC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		C5D04F421ABDDE3D008B73BC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C5D04F411ABDDE3D008B73BC /* Animus.app */,
+				C5D04F5D1ABDDE3D008B73BC /* AnimusTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		C5D04F431ABDDE3D008B73BC /* Animus */ = {
+			isa = PBXGroup;
+			children = (
+				C5D04F481ABDDE3D008B73BC /* AppDelegate.h */,
+				C5D04F491ABDDE3D008B73BC /* AppDelegate.m */,
+				C5D04F4E1ABDDE3D008B73BC /* ViewController.h */,
+				C5D04F4F1ABDDE3D008B73BC /* ViewController.m */,
+				C5D04F511ABDDE3D008B73BC /* Main.storyboard */,
+				C5D04F541ABDDE3D008B73BC /* Images.xcassets */,
+				C5D04F561ABDDE3D008B73BC /* LaunchScreen.xib */,
+				C5D04F4B1ABDDE3D008B73BC /* Animus.xcdatamodeld */,
+				C5D04F441ABDDE3D008B73BC /* Supporting Files */,
+			);
+			path = Animus;
+			sourceTree = "<group>";
+		};
+		C5D04F441ABDDE3D008B73BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5D04F451ABDDE3D008B73BC /* Info.plist */,
+				C5D04F461ABDDE3D008B73BC /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		C5D04F601ABDDE3D008B73BC /* AnimusTests */ = {
+			isa = PBXGroup;
+			children = (
+				C5D04F631ABDDE3D008B73BC /* AnimusTests.m */,
+				C5D04F611ABDDE3D008B73BC /* Supporting Files */,
+			);
+			path = AnimusTests;
+			sourceTree = "<group>";
+		};
+		C5D04F611ABDDE3D008B73BC /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				C5D04F621ABDDE3D008B73BC /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		C5D04F401ABDDE3D008B73BC /* Animus */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5D04F671ABDDE3D008B73BC /* Build configuration list for PBXNativeTarget "Animus" */;
+			buildPhases = (
+				C5D04F3D1ABDDE3D008B73BC /* Sources */,
+				C5D04F3E1ABDDE3D008B73BC /* Frameworks */,
+				C5D04F3F1ABDDE3D008B73BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Animus;
+			productName = Animus;
+			productReference = C5D04F411ABDDE3D008B73BC /* Animus.app */;
+			productType = "com.apple.product-type.application";
+		};
+		C5D04F5C1ABDDE3D008B73BC /* AnimusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C5D04F6A1ABDDE3D008B73BC /* Build configuration list for PBXNativeTarget "AnimusTests" */;
+			buildPhases = (
+				C5D04F591ABDDE3D008B73BC /* Sources */,
+				C5D04F5A1ABDDE3D008B73BC /* Frameworks */,
+				C5D04F5B1ABDDE3D008B73BC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				C5D04F5F1ABDDE3D008B73BC /* PBXTargetDependency */,
+			);
+			name = AnimusTests;
+			productName = AnimusTests;
+			productReference = C5D04F5D1ABDDE3D008B73BC /* AnimusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		C5D04F391ABDDE3D008B73BC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0620;
+				ORGANIZATIONNAME = TeamGoat;
+				TargetAttributes = {
+					C5D04F401ABDDE3D008B73BC = {
+						CreatedOnToolsVersion = 6.2;
+					};
+					C5D04F5C1ABDDE3D008B73BC = {
+						CreatedOnToolsVersion = 6.2;
+						TestTargetID = C5D04F401ABDDE3D008B73BC;
+					};
+				};
+			};
+			buildConfigurationList = C5D04F3C1ABDDE3D008B73BC /* Build configuration list for PBXProject "Animus" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = C5D04F381ABDDE3D008B73BC;
+			productRefGroup = C5D04F421ABDDE3D008B73BC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C5D04F401ABDDE3D008B73BC /* Animus */,
+				C5D04F5C1ABDDE3D008B73BC /* AnimusTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		C5D04F3F1ABDDE3D008B73BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D04F531ABDDE3D008B73BC /* Main.storyboard in Resources */,
+				C5D04F581ABDDE3D008B73BC /* LaunchScreen.xib in Resources */,
+				C5D04F551ABDDE3D008B73BC /* Images.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D04F5B1ABDDE3D008B73BC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		C5D04F3D1ABDDE3D008B73BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D04F4A1ABDDE3D008B73BC /* AppDelegate.m in Sources */,
+				C5D04F471ABDDE3D008B73BC /* main.m in Sources */,
+				C5D04F501ABDDE3D008B73BC /* ViewController.m in Sources */,
+				C5D04F4D1ABDDE3D008B73BC /* Animus.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C5D04F591ABDDE3D008B73BC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C5D04F641ABDDE3D008B73BC /* AnimusTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		C5D04F5F1ABDDE3D008B73BC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C5D04F401ABDDE3D008B73BC /* Animus */;
+			targetProxy = C5D04F5E1ABDDE3D008B73BC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		C5D04F511ABDDE3D008B73BC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5D04F521ABDDE3D008B73BC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		C5D04F561ABDDE3D008B73BC /* LaunchScreen.xib */ = {
+			isa = PBXVariantGroup;
+			children = (
+				C5D04F571ABDDE3D008B73BC /* Base */,
+			);
+			name = LaunchScreen.xib;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		C5D04F651ABDDE3D008B73BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		C5D04F661ABDDE3D008B73BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		C5D04F681ABDDE3D008B73BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Animus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		C5D04F691ABDDE3D008B73BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = Animus/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		C5D04F6B1ABDDE3D008B73BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnimusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animus.app/Animus";
+			};
+			name = Debug;
+		};
+		C5D04F6C1ABDDE3D008B73BC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = AnimusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Animus.app/Animus";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		C5D04F3C1ABDDE3D008B73BC /* Build configuration list for PBXProject "Animus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D04F651ABDDE3D008B73BC /* Debug */,
+				C5D04F661ABDDE3D008B73BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C5D04F671ABDDE3D008B73BC /* Build configuration list for PBXNativeTarget "Animus" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D04F681ABDDE3D008B73BC /* Debug */,
+				C5D04F691ABDDE3D008B73BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		C5D04F6A1ABDDE3D008B73BC /* Build configuration list for PBXNativeTarget "AnimusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				C5D04F6B1ABDDE3D008B73BC /* Debug */,
+				C5D04F6C1ABDDE3D008B73BC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C5D04F4B1ABDDE3D008B73BC /* Animus.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C5D04F4C1ABDDE3D008B73BC /* Animus.xcdatamodel */,
+			);
+			currentVersion = C5D04F4C1ABDDE3D008B73BC /* Animus.xcdatamodel */;
+			path = Animus.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = C5D04F391ABDDE3D008B73BC /* Project object */;
+}
