@@ -27,7 +27,7 @@ public class AudioManager
 
   public boolean isPlaying() {
     for(int i=0; i<clips.length; i++) {
-      if(clips[0].isRunning()) return true;
+      if(clips[i].getMicrosecondLength() != clips[i].getMicrosecondPosition()) return true;
     }
     return false;
   }

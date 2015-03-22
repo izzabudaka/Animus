@@ -28,7 +28,8 @@ public class Animus
   }
 
   public void testAudio() {
-    _audioManager.playSound(0, 1);
+    _audioManager.playSound(0, 6);
+    while(_audioManager.isPlaying()){}
   }
 
   public void run() {
