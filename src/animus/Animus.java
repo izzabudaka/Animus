@@ -2,11 +2,14 @@ package animus;
 
 import animus.StreamServer;
 import animus.SpeechRecognizer;
+<<<<<<< HEAD
 import animus.AudioManager;
+=======
+import animus.ClassifierWrapper;
+>>>>>>> 6e423551c31b463a10d7de23287e369dcf8cff41
 
 public class Animus
 {
-
   StreamServer _streamServer;
   AudioManager _audioManager;
 
@@ -27,19 +30,29 @@ public class Animus
     _audioManager = new AudioManager(filenames);
   }
 
+  public void testAudio() {
+    _audioManager.playSound(0, 1);
+  }
+
   public void run() {
     //_streamServer.run();
     //SpeechRecognizer r = new SpeechRecognizer();
     //r.recognizeFromFile("asdf.wav");
-    _audioManager.playSound(0, 1);
+    //_audioManager.playSound(0, 1);
 
+    MagicClassifier classifier = new MagicClassifier();
+    bufferSize = 5; // in number of words
+    ClassifierWrapper wrapper = new ClassifierWrapper(bufferSize, classifier);
+    SpeechRecognizer r = new SpeechRecognizer(wrapper);
+    r.recognizeFromFile("HQ-speech44100-mono.wav");
   }
 
   public static void main(String[] args) {
     Animus a = new Animus();
 
     a.init();
-    a.run();
+    //a.run();
+    a.testAudio();
   }
 
 }
