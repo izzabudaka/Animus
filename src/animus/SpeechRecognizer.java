@@ -41,13 +41,13 @@ public class SpeechRecognizer
     SpeechResult result = null;
     while ((result = recognizer.getResult()) != null) {
       System.out.println(result.getHypothesis());
+
+      for (WordResult r : result.getWords()) {
+        System.out.println(r);
+      }
     }
 
     recognizer.stopRecognition();
-
-    for (WordResult r : result.getWords()) {
-        System.out.println(r);
-    }
   }
 
   public void recognizeFromFile(String filename) {
