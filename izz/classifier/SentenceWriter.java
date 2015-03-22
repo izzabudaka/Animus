@@ -24,6 +24,7 @@ public class SentenceWriter{
       FileWriter outfile = new FileWriter("perceptron-data.txt", true);
       HashSet<Integer> setOfLabels = new HashSet<Integer>();
       int[] array = {1,2,3,4,5,6};
+      String[] notWanted = {",", "\"", ".", "!", "?", "\'", "`", "1", "2", "3", "4", "5", "6", "7", "8", "9", "0"};
       for (int i : array)
         setOfLabels.add(i);
       try {
@@ -31,10 +32,14 @@ public class SentenceWriter{
           String line = br.readLine();
 
           while (line != null) {
-              line = line.trim().replace(",","").replace("\"","").replace(".","").replace("!","").replace("?","").replace("\'","").replace("`","").toLowerCase();
-              sb.append(line);
-              sb.append(System.lineSeparator());
-              line = br.readLine();
+            for (String thing : notWanted)
+            {
+              line = line.replace(thing,"");
+            }
+            line = line.trim().toLowerCase();
+            sb.append(line);
+            sb.append(System.lineSeparator());
+            line = br.readLine();
           }
           String everything = sb.toString();
           String[] tokens = everything.split("\\s+");
