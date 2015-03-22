@@ -12,7 +12,7 @@ public class PercTrainer{
     tester = new PercTester();
 
     trainingData = new HashMap(1009);
-    trainingData = readSentences("Sentences.txt");
+    trainingData = readSentences("perceptron-data.txt");
   }
   public void modifyWeights(){
     double prevCost = 0.0;
@@ -74,7 +74,6 @@ public class PercTrainer{
       Scanner sc=new Scanner(new FileReader(filename));
       while (sc.hasNextLine()) {
         String sentence = sc.nextLine();
-        System.out.println(sentence);
         int label = Integer.parseInt(sc.nextLine());
         trainingData.put(sentence.toLowerCase().replace(".","").replace(",","").replace("?","").replace("!","").replace(";","").replace("\"",""), label);
       }
