@@ -26,26 +26,34 @@ public class Animus
 	}
 
   public void tick(double res[]) {
-    System.out.println("tick");
+    //System.out.println("tick");
 
     double[] newVals = _determiner.computeNewRatios(res);
-    for(int i=0; i<newVals.length; i++) {
-      System.out.print(newVals[i] + " ");
-    }
-    System.out.println("\n");
+    //for(int i=0; i<newVals.length; i++) {
+    //  System.out.print(newVals[i] + " ");
+    //}
+    //System.out.println("\n");
 
-    double[] gains = _determiner.deriveAudioGainValues(0.5);
+    double[] gains = _determiner.deriveAudioGainValues(0.55);
+    System.out.println("gains: ");
     for(int i=0; i<gains.length; i++) {
       System.out.print(gains[i] + " ");
     }
     System.out.println("\n");
+
+    for(int i=0; i<5; i++) {
+      _audioManager.playSound(i, (float)gains[i]);
+    }
   }
 
   public void init() {
   
     String[] filenames = {
-      "s1.wav",
-      "s2.wav"
+      "music/Suspense.wav",
+      "music/Action.wav",
+      "music/Dramatic.wav",
+      "music/Happy.wav",
+      "music/Sad.wav"
     };
 
     Logistic.train1();
@@ -73,7 +81,10 @@ public class Animus
   }
 
   public void run() {
+    _streamServer.run();
     _speechRecognizer.recognizeFromFile("HQ-speech44100-mono.wav");
+
+    while(_audioManager.isPlaying()){}
   }
 
   public static void main(String[] args) {
