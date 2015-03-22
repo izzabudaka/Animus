@@ -1,6 +1,4 @@
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -72,8 +70,8 @@ public class Logistic {
 
         DataSet dataSet = new DataSet();
 
-        int[][] examples          = dataSet.getExamples();
-        int[]   defaultLabels     = dataSet.getDefaultLabels();
+        int[][] examples           = dataSet.getExamples();
+        int[]   defaultLabels      = dataSet.getDefaultLabels();
         List<Instance> instances   = dataSet.getInstances();
 
         int featuresNumber = examples[0].length;
@@ -83,25 +81,32 @@ public class Logistic {
 
         int[] labels    = {0,1,2,3,4,5};
 
-        System.out.println(instances.size());
-        System.out.println(examplesNumber);
+        System.out.println("Instances: "  + instances.size());
+        System.out.println("ExamplesNum:" + examplesNumber);
 
         for(int label:labels) {
 
             for(int i = 1; i < examplesNumber -1 ; i++) {
                 int labelX = defaultLabels[i] == label ? 1 : 0;
-                instances.get(i).label = label;
+                instances.get(i).label = labelX;
             }
             
-            classifiers[label] = new Logistic(featuresNumber - 1);
+            classifiers[label] = new Logistic(featuresNumber - 2);
             classifiers[label].train(instances);
         }
 
-        String text = "was a loud bang the snake instead of vanishing flew ten feet into the air and fell back to the";
+        String text = "Fawkes dived His long golden beak sank out of the sight and a sudden shower of dark blood spattered the floor";
         int[] vector = dataSet.stringToVector(text);
 
         for(Logistic log:classifiers) {
             System.out.println(log.classify(vector));
+        }
+
+        String text2 = "Help me help me Harry muttered wildly someone anyone";
+        int[] vector2 = dataSet.stringToVector(text2);
+
+        for(Logistic log:classifiers) {
+            System.out.println(log.classify(vector2));
         }
 
     }
