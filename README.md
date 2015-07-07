@@ -8,5 +8,6 @@ When the mood changes, the musics fades in and out accordingly.
 
 # Compiling and Running Instructions
 
-Compile: Make Build
+Compile: Make Build.
+
 Run: Make Run
