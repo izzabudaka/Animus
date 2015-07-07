@@ -1,11 +1,7 @@
 # animus
 
-# Suspense:
-1. https://www.youtube.com/watch?v=iGBydRP0Mmg
-2. https://www.youtube.com/watch?v=nE84o2l5FCk&spfreload=10
-3. https://www.youtube.com/watch?v=k1S4jNR6afA&spfreload=10
+# Main Concept
 
-# Action:
-1. https://www.youtube.com/watch?v=h3Jb2PWELjk&spfreload=10
-2. https://www.youtube.com/watch?v=uFvPKvxIG7s&spfreload=10
-3. https://www.youtube.com/watch?v=Ys5-Pb1LdK0&spfreload=10
+Animus extracts Adverbs, Verbs and Adjectives from speech using Stanford NLP library.
+These words are used to extract features to determine the mood of the text and plays corresponding musics dynamically.
+When the mood changes, the musics fades in and out accordingly.
